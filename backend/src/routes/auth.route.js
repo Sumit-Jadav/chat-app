@@ -4,6 +4,7 @@ import {
   login,
   logout,
   updateProfile,
+  checkAuth,
 } from "../controllers/auth.controller.js";
 
 import { protectRoute } from "../middleware/auth.middleware.js";
@@ -16,6 +17,8 @@ authRouter.post("/login", login);
 
 authRouter.post("/logout", logout);
 
-authRouter.put("/update-profile", protectroute, updateProfile);
+authRouter.put("/update-profile", protectRoute, updateProfile);
+
+authRouter.get("/check", protectRoute, checkAuth);
 
 export default authRouter;
