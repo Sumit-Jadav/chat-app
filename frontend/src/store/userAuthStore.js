@@ -56,4 +56,6 @@ export const userAuthStore = create((set) => ({
       toast.error(response.data.message);
     }
   },
+
+  updateProfilePic: (data) => {},
 }));
