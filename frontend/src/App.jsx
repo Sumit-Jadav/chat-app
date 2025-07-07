@@ -9,10 +9,13 @@ import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import ProfilePage from "./pages/ProfilePage";
 import { userAuthStore } from "./store/userAuthStore";
+import { useThemeStore } from "./store/useThemeStore";
+
 import { useEffect } from "react";
 
 const App = () => {
   const { authUser, isCheckingAuth, checkAuth } = userAuthStore();
+  const { theme } = useThemeStore();
   useEffect(() => {
     checkAuth();
   }, []);
@@ -26,7 +29,7 @@ const App = () => {
     );
   }
   return (
-    <div data-theme="dark" className="min-h-screen">
+    <div data-theme={theme}>
       <Navbar />
       <Routes>
         <Route
