@@ -10,13 +10,14 @@ import SignUpPage from "./pages/SignUpPage";
 import ProfilePage from "./pages/ProfilePage";
 import { userAuthStore } from "./store/userAuthStore";
 import { useEffect } from "react";
+
 const App = () => {
   const { authUser, isCheckingAuth, checkAuth } = userAuthStore();
   useEffect(() => {
     checkAuth();
   }, []);
 
-  console.log(authUser);
+  // console.log(authUser);
   if (isCheckingAuth && !authUser) {
     return (
       <div className="flex items-center justify-center h-screen">
@@ -25,7 +26,7 @@ const App = () => {
     );
   }
   return (
-    <div>
+    <div data-theme="dark" className="min-h-screen">
       <Navbar />
       <Routes>
         <Route
