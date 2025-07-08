@@ -10,7 +10,7 @@ const AuthImagePattern = ({ title, subtitle }) => {
           ? "bg-neutral text-neutral-content"
           : "bg-base-200 text-base-content"
       }`}
-      data-theme={theme} // optional: helps ensure DaisyUI applies styles properly
+      data-theme={theme}
     >
       <div className="max-w-md text-center">
         <div className="grid grid-cols-3 gap-3 mb-8">
